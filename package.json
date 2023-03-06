@@ -22,5 +22,8 @@
     "react-is": "^18.2.0",
     "typescript": "4.9.5",
     "urql": "^3.0.3"
+  },
+  "devDependencies": {
+    "graphql": "^16.6.0"
   }
 }
