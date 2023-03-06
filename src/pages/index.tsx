@@ -26,8 +26,15 @@ const Home: NextPage<Props> = (props) => {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          {props.title}
+          Hello, GraphQL!
         </h1>
+        <ul className={styles.grid}>
+          {props.posts.map((post) => (
+            <li key={post.id} className={styles.card}>
+              id: {post.id} title: {post.title}
+            </li>
+          ))}
+        </ul>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
