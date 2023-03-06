@@ -136,10 +136,29 @@ const Home: NextPage<Props> = (props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    props: {
-      title: 'Hello GraphQL!',
-    }
+  try {
+    const client = await urqlClient();
+
+    const postsQuery = gql`
+      query {
+        posts {
+          id
+          title
+        }
+      }
+    `;
+    const result = await client.query(postsQuery, {}).toPromise();
+
+    return {
+      props: {
+        posts: result.data.posts,
+      },
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      notFound: true,
+    };
   }
 }
 
