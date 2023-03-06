@@ -9,7 +9,10 @@ import styles from '@/src/styles/Home.module.css';
 const inter = Inter({ subsets: ['latin'] });
 
 type Props = {
-  title: string
+  posts: {
+    id: string;
+    title: string;
+  }[];
 }
 
 const Home: NextPage<Props> = (props) => {
