@@ -1,8 +1,10 @@
-import type { GetServerSideProps ,NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/src/styles/Home.module.css'
+import gql from "graphql-tag";
+import type { GetServerSideProps ,NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from 'next/font/google';
+import { urqlClient } from "@/src/libs/gql-requests";
+import styles from '@/src/styles/Home.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
